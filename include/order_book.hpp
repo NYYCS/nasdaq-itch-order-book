@@ -10,7 +10,7 @@ static inline __attribute__((always_inline)) uint64_t read_uint64(const char *sr
 
 static inline __attribute__((always_inline)) uint32_t read_uint32(const char *src)
 {
-    return __builtin_bswap64(*(uint32_t *)(src));
+    return __builtin_bswap32(*(uint32_t *)(src));
 }
 
 static inline __attribute__((always_inline)) uint16_t read_uint16(const char *src)
@@ -60,7 +60,7 @@ namespace itch
                     it->quantity += quantity;
                     return;
                 }
-                if (price_compare(it->price, price))
+                if (price_compare(price, it->price))
                     break;
             }
 
